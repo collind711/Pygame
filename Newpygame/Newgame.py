@@ -268,10 +268,14 @@ while run:
         player1.vel[1] = 100 * dt
         y2 += 100 * dt
     if event.type == pygame.KEYUP:
-            if event.key == pygame.K_w or event.key == pygame.K_s:
+            '''
+            if event.key == pygame.K_w or event.key == pygame.K_s: #Can cause issue where if two buttons are pressed at the same time it would keep going
                 player1.vel[1] = 0
             if event.key == pygame.K_a or event.key == pygame.K_d:
                 player1.vel[0] = 0
+                '''
+            player1.vel[0] = 0
+            player1.vel[1] = 0
 
     
     if keys[pygame.K_ESCAPE]:
